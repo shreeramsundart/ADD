@@ -1,0 +1,43 @@
+# 1. Initialize a new local Git repository:
+git init
+
+# 2. Create a new file named "index.html" with some basic HTML content.
+
+# 3. Add the "index.html" file to the staging area:
+git add index.html
+
+# 4. Commit the "index.html" file to the local repository:
+git commit -m "1. Initial commit - Added index.html"
+
+# 5. Create three branches named "auth," "payment," and "security":
+git branch auth
+git branch payment
+git branch security
+
+# 6. Switch to the "auth" branch:
+git checkout auth
+
+# 7. In the "auth" branch, make a small change to the "index.html" file and commit the changes directly:
+echo "<p>Auth branch change</p>" >> index.html
+git add index.html
+git commit -m "2. Made a small change in the auth branch"
+
+# 8. Switch to the "payment" branch:
+git checkout payment
+
+# 9. In the "payment" branch, make another small change to the "index.html" file and commit the changes directly:
+echo "<p>Payment branch change</p>" >> index.html
+git add index.html
+git commit -m "3. Made a small change in the payment branch"
+
+# 10. Switch to the "security" branch:
+git checkout security
+
+# 11. In the "security" branch, make yet another small change to the "index.html" file and commit the changes directly:
+echo "<p>Security branch change</p>" >> index.html
+git add index.html
+git commit -m "4. Made a small change in the security branch"
+
+# 12. Merge the changes from the "auth" branch into the "payment" branch:
+git checkout payment
+git merge auth

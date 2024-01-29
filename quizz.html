@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .option {
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            width: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>Quiz Time!</h1>
+
+        <div class="question" id="question1">
+            <p>What is the capital of France?</p>
+            <div class="options">
+                <div class="option" onclick="checkAnswer('question1', 'option1')">Paris</div>
+                <div class="option" onclick="checkAnswer('question1', 'option2')">Berlin</div>
+                <div class="option" onclick="checkAnswer('question1', 'option3')">Madrid</div>
+                <div class="option" onclick="checkAnswer('question1', 'option4')">Rome</div>
+            </div>
+        </div>
+
+        <div class="question" id="question2">
+            <p>Which planet is known as the Red Planet?</p>
+            <div class="options">
+                <div class="option" onclick="checkAnswer('question2', 'option1')">Mars</div>
+                <div class="option" onclick="checkAnswer('question2', 'option2')">Venus</div>
+                <div class="option" onclick="checkAnswer('question2', 'option3')">Jupiter</div>
+                <div class="option" onclick="checkAnswer('question2', 'option4')">Saturn</div>
+            </div>
+        </div>
+
+        <div class="question" id="question3">
+            <p>What is the largest mammal on Earth?</p>
+            <div class="options">
+                <div class="option" onclick="checkAnswer('question3', 'option1')">Elephant</div>
+                <div class="option" onclick="checkAnswer('question3', 'option2')">Blue Whale</div>
+                <div class="option" onclick="checkAnswer('question3', 'option3')">Giraffe</div>
+                <div class="option" onclick="checkAnswer('question3', 'option4')">Lion</div>
+            </div>
+        </div>
+
+        <div id="score"></div>
+    </div>
+
+    <script>
+        var score = 0;
+
+        function checkAnswer(questionId, selectedOption) {
+            var correctOption = getCorrectOption(questionId);
+
+            if (selectedOption === correctOption) {
+                alert("Correct!");
+                score++;
+            } else {
+                alert("Incorrect!");
+            }
+
+            // Move to the next question or display the final score
+            var point = getNextQuestionId(questionId);
+            if (point=="") {
+              
+                displayFinalScore();
+            }
+        }
+
+        function getCorrectOption(questionId) {
+            // Add your logic to determine the correct option for each question
+            switch (questionId) {
+                case "question1":
+                    return "option1";
+                case "question2":
+                    return "option1";
+                case "question3":
+                    return "option2";
+                default:
+                    return "";
+            }
+        }
+
+        function getNextQuestionId(questionId) {
+            // Add your logic to determine the next question based on the current question
+           if(questionId=="question3"){
+               
+                    return "";
+            }
+        }
+
+        function displayFinalScore() {
+            var scoreElement = document.getElementById("score");
+            scoreElement.innerHTML = "Your final score is: " + score + " out of 3";
+            scoreElement.style.display = "block";
+        }
+    </script>
+</body>
+</html>

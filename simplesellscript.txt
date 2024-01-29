@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# 1. Creates a new directory named "ShellScriptDemo."
+mkdir ShellScriptDemo
+
+# 2. Change to the newly created directory.
+cd ShellScriptDemo
+
+# 3. Generate a new text file named "SampleFile.txt."
+touch SampleFile.txt
+
+# 4. Appends the current date and time to "SampleFile.txt."
+date >> SampleFile.txt
+
+# 5. Displays the contents of "SampleFile.txt" to the terminal.
+cat SampleFile.txt

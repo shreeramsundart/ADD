@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Division Operation</title>
+    
+</head>
+<body>
+    <h1>Basic Division Operation</h1>
+
+    <label for="numerator">Numerator:</label>
+    <input type="text" id="numerator" placeholder="Enter numerator">
+    <br>
+
+    <label for="denominator">Denominator:</label>
+    <input type="text" id="denominator" placeholder="Enter denominator">
+    <br>
+
+    <button onclick="performDivision()">Divide</button>
+
+    <div id="result"></div>
+    <div id="error-message"></div>
+
+    <script>
+        function performDivision() {
+            var numerator = parseFloat(document.getElementById("numerator").value);
+            var denominator = parseFloat(document.getElementById("denominator").value);
+
+            try {
+
+                if (denominator === 0) {
+                    throw ("Division by zero is not allowed.");
+                }
+
+                document.getElementById("result").innerText = "Result: " + numerator / denominator;
+                
+            } catch (error) {
+                document.getElementById("error-message").innerText = "Error: " + error;
+            }
+        }
+    </script>
+</body>
+</html>

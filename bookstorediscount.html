@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #discount {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to our Online Bookstore!</h1>
+    
+    <label for="membershipLevel">Enter your membership level:</label>
+    <input type="text" id="membershipLevel" placeholder="Silver, Gold, Platinum">
+    <br>
+    <button onclick="calculateDiscount()">Calculate Discount</button>
+
+    <div id="discount"></div>
+
+    <script>
+        function calculateDiscount() {
+            // Get user input
+            var membershipLevel = document.getElementById("membershipLevel").value.toLowerCase();
+
+            // Define discount percentages
+            var discountPercentage = 0;
+
+            // Calculate discount based on membership level
+            switch (membershipLevel) {
+                case "silver":
+                    discountPercentage = 5;
+                    break;
+                case "gold":
+                    discountPercentage = 10;
+                    break;
+                case "platinum":
+                    discountPercentage = 15;
+                    break;
+                default:
+                    // Default to 0% discount for invalid input
+                    break;
+            }
+
+            // Display the calculated discount on the webpage
+            var discountElement = document.getElementById("discount");
+            discountElement.textContent = "Your discount percentage is: " + discountPercentage + "%";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+Root Folder
+|-- Folder_A
+|   |-- Subfolder Al
+|    |    |-- File_Al.txt
+|    |    |- File_A2.uxt
+|   |-- Subfolder_A2
+I           |--File_A3.txt
+|-- Folder_B
+|   |-- SubfolderB1
+I           |-- File_Bl.txt
+I-- FolderC
+     |-- File_Cl.txt
+      |-- File_C2.txt
+
+
+answer
+#!/bin/bash
+
+# Root folder
+mkdir "Root Folder"
+cd "Root Folder"
+
+# Folder_A
+mkdir "Folder_A"
+cd "Folder_A"
+
+# Subfolder_A1
+mkdir "Subfolder_A1"
+cd "Subfolder_A1"
+touch "File_A1.txt"
+echo "Content of File_A1" > "File_A1.txt"
+touch "File_A2.txt"
+echo "Content of File_A2" > "File_A2.txt"
+cd ..
+
+# Subfolder_A2
+mkdir "Subfolder_A2"
+cd "Subfolder_A2"
+touch "File_A3.txt"
+echo "Content of File_A3" > "File_A3.txt"
+cd ..
+
+cd ..
+
+# Folder_B
+mkdir "Folder_B"
+cd "Folder_B"
+
+# Subfolder_B1
+mkdir "Subfolder_B1"
+cd "Subfolder_B1"
+touch "File_B1.txt"
+echo "Content of File_B1" > "File_B1.txt"
+cd ..
+
+cd ..
+
+# Folder_C
+mkdir "Folder_C"
+cd "Folder_C"
+
+touch "File_C1.txt"
+echo "Content of File_C1" > "File_C1.txt"
+touch "File_C2.txt"
+echo "Content of File_C2" > "File_C2.txt"
+
+cd ..
