@@ -72,23 +72,7 @@
 
         function checkAnswer(questionId, selectedOption) {
             var correctOption = getCorrectOption(questionId);
-
-            if (selectedOption === correctOption) {
-                alert("Correct!");
-                score++;
-            } else {
-                alert("Incorrect!");
-            }
-
-            // Move to the next question or display the final score
-            var point = getNextQuestionId(questionId);
-            if (point=="") {
-              
-                displayFinalScore();
-            }
-        }
-
-        function getCorrectOption(questionId) {
+   function getCorrectOption(questionId) {
             // Add your logic to determine the correct option for each question
             switch (questionId) {
                 case "question1":
@@ -101,20 +85,19 @@
                     return "";
             }
         }
-
-        function getNextQuestionId(questionId) {
-            // Add your logic to determine the next question based on the current question
-           if(questionId=="question3"){
-               
-                    return "";
+            if (selectedOption === correctOption) {
+                alert("Correct!");
+                score++;
+                
+                displayFinalScore();
+            } else {
+                alert("Incorrect!");
             }
-        }
-
         function displayFinalScore() {
             var scoreElement = document.getElementById("score");
             scoreElement.innerHTML = "Your final score is: " + score + " out of 3";
             scoreElement.style.display = "block";
-        }
+        }}
     </script>
 </body>
 </html>
